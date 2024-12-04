@@ -1,4 +1,4 @@
-Project Name: Tik Tac Toe - MOJO 
+Project Name: Tic Tac Toe - MOJO 
 Team Members: Prerna Joshi, Hafsa Khan, Richard Reyes, Hajarah Amjad
 Group: Mojo B
 
