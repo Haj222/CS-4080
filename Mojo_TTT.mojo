@@ -11,11 +11,11 @@ fn display_board(borrowed board: InlinedFixedVector[Int, 9]):
     for row in range(3):
         for col in range(3):
             if board[row * 3 + col] == 1:
-                print("O", end=" ")  # Display "O" for user
+                print("O", end=" ") 
             elif board[row * 3 + col] == 2:
-                print("X", end=" ")  # Display "X" for computer
+                print("X", end=" ")  
             else:
-                print(".", end=" ")  # Empty slot represented by "."
+                print(".", end=" ")  
         print()
 
 fn is_valid_input(borrowed input: Int) -> Bool:
@@ -56,24 +56,24 @@ fn main() raises:
     var builtins = Python().import_module("builtins")
     while True:
         if board_is_full(board):
-            display_board(board)  # Display the final board
+            display_board(board)  
             print("It's a tie!")
             break
         var user_input = atol(builtins.input("Select a number between 1 and 9: "))
         if is_valid_input(user_input):
-            var index = user_input - 1  # Calculate the index for the board
-            if board[index] != 0:  # Check if the spot is taken
+            var index = user_input - 1  
+            if board[index] != 0:  
                 print("The spot is already taken! Please select a different number.")
                 continue  # Prompt for input again
-            board[index] = 1  # User uses 1 for "O"
+            board[index] = 1  
             computer_move(board)
             var winner = determine_winner(board)
             if winner == 1:
-                display_board(board)  # Display the final board
+                display_board(board) 
                 print("You won!")
                 break
             elif winner == 2:
-                display_board(board)  # Display the final board
+                display_board(board)  
                 print("You lost!")
                 break
             display_board(board)
